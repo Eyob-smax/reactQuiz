@@ -68,7 +68,7 @@ function App() {
     fetch("http://localhost:8000/questions")
       .then((result) => result.json())
       .then((data) => {
-        dispatch({ type: "dataReceived", payload: data.slice(0, 3) });
+        dispatch({ type: "dataReceived", payload: data });
       })
       .catch(() => dispatch({ type: "dataFailed" }));
   }, []);
