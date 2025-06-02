@@ -1,5 +1,4 @@
 export default function NextButton({ index, numQuestions, dispatch, answer }) {
-  console.log(index, numQuestions);
   if (answer === null) return;
   return (
     <button
