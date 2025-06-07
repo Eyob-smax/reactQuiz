@@ -1,4 +1,8 @@
-export default function Options({ question, dispatch, answer }) {
+import useQuiz from "./customhooks/useQuiz";
+
+export default function Options() {
+  const { answer, questions, currentIndex, dispatch } = useQuiz();
+  const question = questions[currentIndex];
   return (
     <div className="options">
       {question.options.map((option, index) => (

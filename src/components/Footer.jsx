@@ -1,3 +1,10 @@
-export default function Footer({ children }) {
-  return <footer>{children}</footer>;
+import Timer from "./Timer";
+import NextButton from "./NextButton";
+export default function Footer() {
+  return (
+    <footer>
+      <Timer />
+      <NextButton />
+    </footer>
+  );
 }

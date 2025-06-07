@@ -1,10 +1,8 @@
-export default function FinishedScreen({
-  points,
-  maxPossiblePoints,
-  highScore,
-  dispatch,
-}) {
-  const percentage = (points / maxPossiblePoints) * 100;
+import useQuiz from "./customhooks/useQuiz";
+
+export default function FinishedScreen() {
+  const { points, MAX_POSSIBLE_POINT, highScore, dispatch } = useQuiz();
+  const percentage = (points / MAX_POSSIBLE_POINT) * 100;
   let emoji = "";
   if (percentage === 100) emoji = "🥇";
   if (percentage >= 80 && percentage < 100) emoji = "🥈";
@@ -15,7 +13,7 @@ export default function FinishedScreen({
     <>
       <p className="result">
         <span>{emoji}</span> You scored <strong>{points}</strong> out of{" "}
-        {maxPossiblePoints}({Math.ceil(percentage)})
+        {MAX_POSSIBLE_POINT}({Math.ceil(percentage)})
       </p>
       <p className="highscore">Highscore: {highScore} points</p>
       <button
